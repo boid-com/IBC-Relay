@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>ZOS X-CHAIN Reports</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <h1>ZOS Crosschain transfer status</h1>
+      <table>
+        <thead>
+          <tr>
+            <th colspan="1">Event ID</th>
+            <th colspan="1">Status</th>
+            <th colspan="1">X-Chain</th>
+            <th colspan="1">Quantity</th>
+            <th colspan="1">Last Error</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% rows.forEach(function(row) { %>
+            <tr>
+              <td><%= row.id %></td>
+              <td><%= row.status %></td>
+              <td><a href="<%= row.transferUrl %>"><%= row.fromBlockchain %></a> -> <%= row.toBlockchain %></td>
+              <td><%= row.quantity %></td>
+              <td><%= row.lastError %></td>
+            </tr>
+        <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
