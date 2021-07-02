@@ -1,8 +1,8 @@
 import * as dotenv from "dotenv";
-import {ALL_NETWORKS, isProduction} from "./utils";
+import { ALL_NETWORKS, isProduction } from "./utils";
 import { NetworkName } from "./types";
 
-const result = dotenv.config({ path: '/env-commands/.env' });
+const result = dotenv.config();
 
 if (result.error) {
   console.log('error')

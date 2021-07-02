@@ -252,8 +252,7 @@ export default class Reporter {
       });
       this.log(
         `info`,
-        `Executed report-id ${
-          reportToExecute.id
+        `Executed report-id ${reportToExecute.id
         } (transfer ${this.getInternalUniqueTransferId(
           reportToExecute.transfer as any
         )}): ${formatBloksTransaction(toBlockchain, tx.transaction_id)}`
@@ -262,8 +261,7 @@ export default class Reporter {
       const errorMessage = extractRpcError(error);
       this.log(
         `error`,
-        `Could not execute report-id ${
-          reportToExecute.id
+        `Could not execute report-id ${reportToExecute.id
         } (transfer ${this.getInternalUniqueTransferId(
           reportToExecute.transfer as any
         )}): ${errorMessage}`
@@ -290,8 +288,7 @@ export default class Reporter {
     });
     this.log(
       `info`,
-      `Reported failed execution for ${
-        reportToExecute.id
+      `Reported failed execution for ${reportToExecute.id
       }: ${formatBloksTransaction(toBlockchain, tx.transaction_id)}`
     );
   }
@@ -327,11 +324,11 @@ export default class Reporter {
   }
 
   private printState() {
-//     this.log(`verbose`, `tranfers:`, this.transfers);
-//     this.log(`verbose`, `reports:`, this.reports);
-//     this.log(
-//       `verbose`,
-//       `headBlock: ${this.currentHeadBlock} irreversible: ${this.currentIrreversibleHeadBlock}`
-//     );
+    //     this.log(`verbose`, `tranfers:`, this.transfers);
+    //     this.log(`verbose`, `reports:`, this.reports);
+    //     this.log(
+    //       `verbose`,
+    //       `headBlock: ${this.currentHeadBlock} irreversible: ${this.currentIrreversibleHeadBlock}`
+    //     );
   }
 }
