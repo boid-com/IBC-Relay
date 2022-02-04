@@ -1,6 +1,6 @@
 FROM node:10-alpine
 
-MAINTAINER "A Evangelou"
+MAINTAINER "R Mapstone"
 
 RUN apk update
 

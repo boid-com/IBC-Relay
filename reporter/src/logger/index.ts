@@ -1,5 +1,4 @@
 // from https://github.com/winstonjs/winston/issues/1427#issuecomment-535297716
-import { format as dateFormat } from "date-fns";
 import path from 'path';
 import { createLogger, format, transports } from "winston";
 import { inspect } from "util"

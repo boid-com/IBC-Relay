@@ -7,39 +7,34 @@ export const sleep = (ms: number) =>
 export const isProduction = () => process.env.NODE_ENV === `production`;
 
 export const formatBloksTransaction = (network: NetworkName, txId: string) => {
-  const _network = unmapNetworkName(network)
-  let bloksNetworkName = _network as string;
-  if(_network === `eos`) bloksNetworkName = ``
-  else if(_network === `telostest`) bloksNetworkName = `telos-test`
-
-  const prefix = bloksNetworkName ? `${bloksNetworkName}.` : ``;
-  return `https://${prefix}bloks.io/transaction/${txId}`;
-};
-
-// export const mapNetworkName = (network: NetworkName): NetworkName => {
-//   if (isProduction()) {
-//     return network;
-//   }
-
-//   switch (network) {
-//     case `eostest`:
-//       return `eos`;
-//     case `telostest`:
-//       return `telos`;
-//   }
-// };
-
-export const unmapNetworkName = (network: NetworkName): NetworkName => {
+  let bloksSubdomain = `bloks.io`
   if (isProduction()) {
-    return network;
+    switch (network) {
+      case `eos`:
+        bloksSubdomain = `bloks.io`;
+        break;
+      case `telos`:
+        bloksSubdomain = `telos.bloks.io`;
+        break;
+      case `wax`:
+        bloksSubdomain = `wax.bloks.io`;
+        break;
+    }
+  } else {
+    switch (network) {
+      case `eos`:
+        bloksSubdomain = `jungle3.bloks.io`;
+        break;
+      case `telos`:
+        bloksSubdomain = `telos-test.bloks.io`;
+        break;
+      case `wax`:
+        bloksSubdomain = `wax-test.bloks.io`;
+        break;
+    }
   }
 
-  switch (network) {
-    case `eos`:
-      return `eostest`;
-    case `telos`:
-      return `telostest`;
-  }
+  return `https://${bloksSubdomain}/transaction/${txId}`;
 };
 
 export const pickRandom = <T>(array: T[]):T => {
@@ -63,8 +58,4 @@ export const extractRpcError = (err: Error|RpcError|any) => {
   return message
 }
 
-// on dev config from real eos is mapped to eostest, telos to telostest
-export const ALL_NETWORKS: NetworkName[] = [`eos`, `telos`, `eostest`, `telostest`];
-export const NETWORKS_TO_WATCH: NetworkName[] = isProduction()
-  ? [`eos`, `telos`]
-  : [`eos`, `telos`];
+export const ALL_NETWORKS: NetworkName[] = [`eos`, `telos`, `wax`];

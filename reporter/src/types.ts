@@ -28,20 +28,26 @@ export type TAsset = {
   symbol: TAssetSymbol;
 };
 
-export type NetworkName = `eos` | `telostest` | `eostest` | `telos`;
+export type NetworkName = `eos` | `telos` | `wax`;
+
 export function isNetworkName(networkName: string): networkName is NetworkName {
   switch (networkName) {
-    case `telostest`:
-      return true;
-    case `eostest`:
-      return true;
     case `eos`:
       return true;
     case `telos`:
       return true;
+    case `wax`:
+      return true;
   }
   return false;
 }
+
+export type TChannelRow = {
+  channel_name: string;
+  remote_contract: string;
+  next_transfer_id: number;
+  enabled: number;
+};
 
 export type TAccountsRow = {
   balance: string;
@@ -59,6 +65,7 @@ export type TTransfersRow = {
   expires_at: string; // "2020-05-21T11:29:56";
   is_refund: number; // 0;
 };
+
 export type TTransfersRowTransformed = Omit<TTransfersRow, "id" | "is_refund"> & {
   id: number;
   is_refund: boolean;

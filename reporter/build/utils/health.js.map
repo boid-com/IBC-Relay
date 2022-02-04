@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"version":3,"file":"health.js","sourceRoot":"","sources":["../../src/utils/health.ts"],"names":[],"mappings":";;;AAEa,QAAA,YAAY,GAAmD,EAAE,CAAA;AAEjE,QAAA,KAAK,GAAG,UAAC,OAAoB,EAAE,SAAgB,EAAE,QAAgB;IAC5E,oBAAY,CAAC,OAAO,CAAC,GAAG,EAAE,KAAK,EAAE,SAAS,EAAE,IAAI,EAAK,QAAQ,MAAG,EAAE,CAAA;AACpE,CAAC,CAAA"}
+=======
+{"version":3,"file":"health.js","sourceRoot":"","sources":["../../src/utils/health.ts"],"names":[],"mappings":";;;AAEa,QAAA,YAAY,GAAmD,EAAE,CAAA;AAEjE,QAAA,KAAK,GAAG,CAAC,OAAoB,EAAE,SAAgB,EAAE,QAAgB,EAAE,EAAE;IAChF,oBAAY,CAAC,OAAO,CAAC,GAAG,EAAE,KAAK,EAAE,SAAS,EAAE,IAAI,EAAE,GAAG,QAAQ,GAAG,EAAE,CAAA;AACpE,CAAC,CAAA"}
+>>>>>>> boid

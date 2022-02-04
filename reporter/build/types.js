@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.exhaustiveCheck = exports.isNetworkName = void 0;
 function isNetworkName(networkName) {
     switch (networkName) {
+<<<<<<< HEAD
         case "telostest":
             return true;
         case "eostest":
@@ -10,6 +11,13 @@ function isNetworkName(networkName) {
         case "eos":
             return true;
         case "telos":
+=======
+        case `eos`:
+            return true;
+        case `telos`:
+            return true;
+        case `wax`:
+>>>>>>> boid
             return true;
     }
     return false;

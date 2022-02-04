@@ -3,65 +3,29 @@
 Nodejs app running on a server that scans all blockchans for events and handles IBC.
 
 ---
-## Testnet setup
-
-For the test environment both the 'EOS' and 'Telos pegger' tokens are created on the Telos test network. The environment required two sets on contracts (token contract and bridge contract), one for the EOS dummy contracts and on  for the Telos pegged tokens.
-
-### EOSDT dummy token (EOS)
-
-- Contract : eosdt.swaps
-- IBC : eos.swaps
-
-### EOSDT pegged token (Telos)
-
-- Contract : usd.swaps
-- IBC : issuer.swaps
-
----
 
 ## Setup
 
 - Can be deployed on servers like any other NodeJS app.
 - It's stateless and does not require any database.
 - Requries Node.js
+- Requires PM2 installed globally
+- Yarn recommended
+- Worker account setup on each chain, Should have at least 50kb of RAM available and 20ms CPU minimum.
+- For EOS worker accounts we suggest you register them in your watchlist at eospowerup.io/auto to ensure they receive resouces automatically.
 
 ```bash
-npm install
-npm run build
-# for production
-npm start
-
-# for testnets
-npm run start-dev
+yarn
+yarn build
 ```
 
-The reporter requires environment variables to be set.
-See `.template.env` - this file can be copied to `.env` and configured with the correct accounts and permissions.
+## PM2 Setup
 
-```bash
-# account name on EOS; permission used for reporting; private key for permission
-EOS_IBC=maltareports;active;5JzSdC...
-# ⚠️ Use your own endpoint here
-EOS_ENDPOINT=https://eos.greymass.com
-# same for TELOS
-TELOS_ENDPOINT=https://api.telos.africa
-TELOS_IBC=maltareports;active;5JzSdC...
-```
-
-#### Setup using Docker
-
-Run the docker cotainer with your updated env file. Refer this template env file https://github.com/maltablock/eosdt-ibc/blob/master/reporter/.template.env-docker
-
-``` docker run  --rm -it -v ${PWD}/env-commands:/env-commands aravindgv/eosdt:latest```
-
-#### Different CPU payer
-
-One can specify a different CPU payer for the actions run by the reporters.
-
-```bash
-# append cpu-account;cpu-key to the existing reporter;permission;key
-EOS_IBC=maltareports;active;5JzSdC...;cpupayer;5k...
-```
+- Make a copy of `prod.ecosystem.config.example.js` file as `prod.ecosystem.config.js`
+- Modify the ecosystem ENV variables with your worker account information on each chain including authority and private key. Please update the nodes from the default and point at your own node you trust for extra security.
+- If you prefer the ENV vars could be provided in another way, in which case you can remove them from the ecosystem file.
+- Run `pm2 start ./prod.ecosystem.config.js` to start the worker. Check the logs and you should see `Reporter eos: started` for each chain.
+- Monitor your logs to ensure there is no authorization errors when making reports.
 
 ## Monitoring
 

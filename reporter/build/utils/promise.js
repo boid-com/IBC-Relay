@@ -1,4 +1,5 @@
 "use strict";
+<<<<<<< HEAD
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -42,6 +43,13 @@ exports.sleep = function (time, throwError) {
     if (throwError === void 0) { throwError = false; }
     return new Promise(function (resolve, reject) {
         setTimeout(function () {
+=======
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PromiseAllSettledFilterFulfilled = exports.PromiseAllSettled = exports.sleep = void 0;
+exports.sleep = (time = 0, throwError = false) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+>>>>>>> boid
             if (throwError) {
                 reject();
             }
@@ -52,6 +60,7 @@ exports.sleep = function (time, throwError) {
     });
 };
 // polyfill for https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled
+<<<<<<< HEAD
 exports.PromiseAllSettled = function (promises) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         return [2 /*return*/, Promise.all(promises.map(function (p) {
@@ -76,4 +85,19 @@ exports.PromiseAllSettledFilterFulfilled = function (promises) { return __awaite
         }
     });
 }); };
+=======
+exports.PromiseAllSettled = async (promises) => {
+    return Promise.all(promises.map(p => p.then(v => {
+        return { status: 'fulfilled', value: v };
+    }, error => {
+        return { status: 'rejected', reason: error };
+    })));
+};
+exports.PromiseAllSettledFilterFulfilled = async (promises) => {
+    const results = await exports.PromiseAllSettled(promises);
+    return results
+        .filter(r => r.status === `fulfilled`)
+        .map(r => r.value);
+};
+>>>>>>> boid
 //# sourceMappingURL=promise.js.map

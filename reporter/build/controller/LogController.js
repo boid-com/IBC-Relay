@@ -1,4 +1,5 @@
 "use strict";
+<<<<<<< HEAD
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -58,5 +59,21 @@ var LogsController = /** @class */ (function () {
     };
     return LogsController;
 }());
+=======
+Object.defineProperty(exports, "__esModule", { value: true });
+const fs_1 = require("fs");
+const logger_1 = require("../logger");
+class LogsController {
+    async logs(req, res, next) {
+        try {
+            const logs = fs_1.readFileSync(logger_1.getLogFilePath(), `utf8`);
+            return `<pre>${logs}</pre>`;
+        }
+        catch (err) {
+            next(err);
+        }
+    }
+}
+>>>>>>> boid
 exports.default = LogsController;
 //# sourceMappingURL=LogController.js.map

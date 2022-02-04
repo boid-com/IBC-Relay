@@ -1,8 +1,8 @@
 {
   "name": "ibc-reporter",
   "description": "Watches all chains for transactions and inserts them into a database",
-  "version": "1.0.0",
-  "author": "Andreas Evangelou",
+  "version": "3.0.0",
+  "author": "Rory Mapstone",
   "engines": {
     "node": ">=10.0.0"
   },
