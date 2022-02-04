@@ -13,11 +13,11 @@ exports.getContractsForNetwork = (network) => {
     if (utils_1.isProduction()) {
         switch (network) {
             case `eos`:
-                return { ibc: `bridge.start`, cpuPayer: `cpu.start`, ...(envConfig.eos || {}) };
+                return { ibc: `ibctknbridge`, cpuPayer: `cpu.start`, ...(envConfig.eos || {}) };
             case `telos`:
-                return { ibc: `bridge.start`, cpuPayer: `cpu.start`, ...(envConfig.telos || {}) };
+                return { ibc: `ibctknbridge`, cpuPayer: `cpu.start`, ...(envConfig.telos || {}) };
             case `wax`:
-                return { ibc: `bridge.start`, cpuPayer: `cpu.start`, ...(envConfig.wax || {}) };
+                return { ibc: `ibctknbridge`, cpuPayer: `cpu.start`, ...(envConfig.wax || {}) };
             default:
                 throw new Error(`No contract accounts for "${network}" network defined yet`);
         }

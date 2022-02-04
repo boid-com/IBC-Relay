@@ -4,9 +4,7 @@ import { NetworkName } from "../types";
 import { getEnvConfig } from "../dotenv";
 import { isProduction } from "../utils";
 
-export const getContractsForNetwork = (
-  network: NetworkName
-): {
+export const getContractsForNetwork = (network: NetworkName): {
   token: string;
   ibc: string;
   cpuPayer: string;
@@ -17,11 +15,11 @@ export const getContractsForNetwork = (
   if (isProduction()) {
     switch (network) {
       case `eos`:
-        return { ibc: `bridge.start`, cpuPayer: `cpu.start`, ...((envConfig.eos || {}) as any) };
+        return { ibc: `ibctknbridge`, cpuPayer: `cpu.start`, ...((envConfig.eos || {}) as any) };
       case `telos`:
-        return { ibc: `bridge.start`, cpuPayer: `cpu.start`, ...((envConfig.telos || {}) as any) };
+        return { ibc: `ibctknbridge`, cpuPayer: `cpu.start`, ...((envConfig.telos || {}) as any) };
       case `wax`:
-        return { ibc: `bridge.start`, cpuPayer: `cpu.start`, ...((envConfig.wax || {}) as any) };
+        return { ibc: `ibctknbridge`, cpuPayer: `cpu.start`, ...((envConfig.wax || {}) as any) };
       default:
         throw new Error(`No contract accounts for "${network}" network defined yet`);
     }
