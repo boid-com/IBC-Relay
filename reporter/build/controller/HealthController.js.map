@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"version":3,"file":"HealthController.js","sourceRoot":"","sources":["../../src/controller/HealthController.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACA,0CAA+C;AAE/C;IAAA;IAQA,CAAC;IAPO,kCAAO,GAAb,UAAc,OAAgB,EAAE,QAAkB,EAAE,IAAkB;;;gBACpE,IAAI;oBACF,sBAAO,IAAI,CAAC,SAAS,CAAC,qBAAY,CAAC,EAAC;iBACrC;gBAAC,OAAO,GAAG,EAAE;oBACZ,IAAI,CAAC,GAAG,CAAC,CAAC;iBACX;;;;KACF;IACH,uBAAC;AAAD,CAAC,AARD,IAQC"}
-=======
 {"version":3,"file":"HealthController.js","sourceRoot":"","sources":["../../src/controller/HealthController.ts"],"names":[],"mappings":";;AACA,4CAA+C;AAE/C,MAAqB,gBAAgB;IACnC,KAAK,CAAC,OAAO,CAAC,OAAgB,EAAE,QAAkB,EAAE,IAAkB;QACpE,IAAI;YACF,OAAO,IAAI,CAAC,SAAS,CAAC,qBAAY,CAAC,CAAC;SACrC;QAAC,OAAO,GAAG,EAAE;YACZ,IAAI,CAAC,GAAG,CAAC,CAAC;SACX;IACH,CAAC;CACF;AARD,mCAQC"}
->>>>>>> boid

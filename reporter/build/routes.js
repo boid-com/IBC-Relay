@@ -4,13 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Routes = void 0;
-<<<<<<< HEAD
-var HealthController_1 = __importDefault(require("./controller/HealthController"));
-var LogController_1 = __importDefault(require("./controller/LogController"));
-=======
 const HealthController_1 = __importDefault(require("./controller/HealthController"));
 const LogController_1 = __importDefault(require("./controller/LogController"));
->>>>>>> boid
 exports.Routes = [
     {
         method: "get",
