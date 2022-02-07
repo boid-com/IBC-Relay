@@ -25,7 +25,7 @@ const utils_1 = require("./utils");
 const result = dotenv.config();
 if (result.error) {
     console.log('error');
-    throw result.error;
+    // throw result.error;
 }
 exports.getEnvConfig = () => {
     const parse = (networkName) => {

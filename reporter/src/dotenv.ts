@@ -6,7 +6,7 @@ const result = dotenv.config();
 
 if (result.error) {
   console.log('error')
-  throw result.error;
+  // throw result.error;
 }
 
 export const getEnvConfig = () => {

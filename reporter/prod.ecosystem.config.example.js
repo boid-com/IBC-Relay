@@ -10,7 +10,7 @@ module.exports = {
         WAX_IBC: "boidcomnodes;active;5JCPYLpip...",
         TELOS_ENDPOINT: "https://telos.caleos.io",
         TELOS_IBC: "boidcomnodes;active;5MHPDUfsp...",
-        EOS_ENDPOINT: "https://eos.greymass.com",
+        EOS_ENDPOINT: "https://eos.eosn.io",
         EOS_IBC: "boidcomnodes;active;5DSPTRfid...",
         NODE_ENV: "production"
       }

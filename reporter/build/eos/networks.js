@@ -65,9 +65,9 @@ const createNetwork = (nodeEndpoint, chainId) => {
     - Jungle testnet : 2a02a0053e5a8cf73a56ba0fda11e4d92e0238a4a2aa74fccf46d5a910746840
     - Wax testnet : f16b1833c747c43682f4386fca9cbb327929334a762755ebec17f6f23c9b8a12
  */
-const EosNetwork = createNetwork(process.env.EOS_ENDPOINT || "https://api.eosn.io:443", "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906");
-const TelosNetwork = createNetwork(process.env.TELOS_ENDPOINT || "https://api.telos.africa:443", "4667b205c6838ef70ff7988f6e8257e8be0e1284a2f59699054a018f743b1d11");
-const WaxNetwork = createNetwork(process.env.WAX_ENDPOINT || "https://chain.wax.io:443", "1064487b3cd1a897ce03ae5b6a865651747e2e152090f99c1d19d44e01aea5a4");
+const EosNetwork = createNetwork(process.env.EOS_ENDPOINT || "https://eos.eosn.io", "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906");
+const TelosNetwork = createNetwork(process.env.TELOS_ENDPOINT || "https://telos.caleos.io", "4667b205c6838ef70ff7988f6e8257e8be0e1284a2f59699054a018f743b1d11");
+const WaxNetwork = createNetwork(process.env.WAX_ENDPOINT || "https://wax.greymass.com", "1064487b3cd1a897ce03ae5b6a865651747e2e152090f99c1d19d44e01aea5a4");
 const EosTestNetwork = createNetwork(process.env.EOSTEST_ENDPOINT || "https://jungle3.cryptolions.io:443", "2a02a0053e5a8cf73a56ba0fda11e4d92e0238a4a2aa74fccf46d5a910746840");
 const TelosTestNetwork = createNetwork(process.env.TELOSTEST_ENDPOINT || "https://testnet.telos.africa:443", "1eaa0824707c8c16bd25145493bf062aecddfeb56c736f6ba6397f3195f33c9f");
 const WaxTestNetwork = createNetwork(process.env.WAXTEST_ENDPOINT || "https://testnet.waxsweden.org:443", "f16b1833c747c43682f4386fca9cbb327929334a762755ebec17f6f23c9b8a12");
