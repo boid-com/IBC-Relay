@@ -5,7 +5,7 @@ module.exports = {
       name: "ibc-worker",
       script: "./build/index.js",
       env: {
-        PORT: "1111", // you can use /health and /logs for monitoring
+        PORT: "1111",
         WAX_ENDPOINT: "https://wax.greymass.com",
         WAX_IBC: "boidcomnodes;active;5JCPYLpip...",
         TELOS_ENDPOINT: "https://telos.caleos.io",
